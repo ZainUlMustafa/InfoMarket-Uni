@@ -1,0 +1,51 @@
+{
+    "data": {
+        "stores": {
+            "store1": {
+                "storeId": "store1",
+                "geo": [
+                    45.957776589812134,
+                    -66.63964921954866
+                ],
+                "name": "Boyce Farmer's Market",
+                "rating": 4.5,
+                "mapLink": "https://firebasestorage.googleapis.com/v0/b/infomarket-uni.appspot.com/o/maps%2Ffloormap.jpeg?alt=media&token=8f72d31d-6a49-45df-97fc-6e20f383f67e"
+            },
+            "store2": {
+                "storeId": "store2",
+                "geo": [
+                    45.96069718383485,
+                    -66.64131578974064
+                ],
+                "name": "Quick Mini Market",
+                "rating": 4.5,
+                "mapLink": "https://firebasestorage.googleapis.com/v0/b/infomarket-uni.appspot.com/o/maps%2Ffloormap.jpeg?alt=media&token=8f72d31d-6a49-45df-97fc-6e20f383f67e"
+            },
+            "store3": {
+                "storeId": "store3",
+                "geo": [
+                    45.96232731129561,
+                    -66.64083057867245
+                ],
+                "name": "Garrison Night Market",
+                "rating": 4.5,
+                "mapLink": "https://firebasestorage.googleapis.com/v0/b/infomarket-uni.appspot.com/o/maps%2Ffloormap.jpeg?alt=media&token=8f72d31d-6a49-45df-97fc-6e20f383f67e"
+            }
+        },
+        "internals": {
+            "store1": {
+                "stalls": {
+                    "stall1": {
+                        "stallId": "stall1",
+                        "category": [
+                            "egg",
+                            "poultry"
+                        ],
+                        "name": "Egg Stall 1",
+                        "location": []
+                    }
+                }
+            }
+        }
+    }
+}

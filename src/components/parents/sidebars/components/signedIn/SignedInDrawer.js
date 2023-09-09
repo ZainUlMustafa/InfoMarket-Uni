@@ -46,8 +46,8 @@ export default compose(
         storeAs: "OutputPredictions",
       },
       {
-        collection: "SensorsData",
-        storeAs: "SensorsData",
+        collection: "Markets",
+        storeAs: "Markets",
       },
       {
         collection: "Configurations",
@@ -72,7 +72,7 @@ export default compose(
     //   project !== undefined ? (project.proid ? project.proid : "-1") : "-1";
 
     return [
-      `/logs`
+      '/data'
     ]
   }),
 )(SignedInDrawer);

@@ -1,26 +1,29 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { Container, Toolbar, Grid, Typography } from '@mui/material';
-import SensorSection from './components/sensors/SensorSection';
-import GlassBeaker from '../cidgets/waterBeaker/GlassBeaker';
-import WaterGatesStatus from './components/sensors/WaterGatesStatus';
-import LogViewer from '../cidgets/LogViewer';
 import { get } from "lodash";
+import StoreFinderMap from './components/storefinder/StoreFinderMap';
 
 const HomeDashboard = (props) => {
-  const { sensorsData } = props;
+  const { sensorsDat, fulldata } = props;
 
-  // const logs = [
-  //   { timestamp: '2023-06-12 10:05:32', message: 'Beaker A filled up' },
-  //   { timestamp: '2023-06-12 10:07:15', message: 'Beaker A emptied' },
-  //   { timestamp: '2023-06-12 10:10:22', message: 'Beaker B filled up' },
-  //   { timestamp: '2023-06-12 10:12:01', message: 'Beaker B emptied' },
-  // ];
-
-  // console.log(props.sensorLogs)
+  console.log(fulldata)
+  if (fulldata === undefined) {
+    return <>Loading</>
+  }
+  const {stores} = fulldata;
 
   return (
     <div style={{ backgroundColor: '', height: '100vh' }}>
+      <Grid container style={{ height: '100vh', backgroundColor: '' }}>
+        <div style={{  }}>
+          <StoreFinderMap stores={stores}/>
+        </div>
+        {/* <Grid item xs={6} sx={{backgroundColor: 'red'}}>
+        </Grid>
+        <Grid item xs={6} sx={{backgroundColor: 'yellow'}}>
+        </Grid> */}
+      </Grid>
     </div>
   )
 }
@@ -30,8 +33,8 @@ const mapStateToProps = (state) => {
     themeColors: state.theme,
     userData: state.firebase.profile,
     project: state.project,
-    sensorsData: state.firestore.data.SensorsData,
-    sensorLogs: get(state.firebase.data, `logs`),
+    marketsData: state.firestore.data.Markets,
+    fulldata: get(state.firebase.data, `data`),
   };
 };
 
